@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.inventory.controller.InventoryController">
+    <HBox spacing="10">
+        <Label text="Product Name:"/>
+        <TextField fx:id="productNameField" promptText="Enter product name"/>
+        <Label text="Stock:"/>
+        <TextField fx:id="stockField" promptText="Enter stock"/>
+        <Button text="Add/Update Stock" onAction="#handleAddOrUpdate"/>
+
+
+
+    </HBox>
+
+    <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Product name"/>
+            <TableColumn fx:id="stockColumn" text="Stock Quantity"/>
+        </columns>
+    </TableView>
+
+    <HBox>
+        <Label text="Search Product::"/>
+        <TextField fx:id="searchField" promptText="Enter product name to search"/>
+        <Button text="Search" onAction="#handleSearch"/>
+    </HBox>
+</VBox>
